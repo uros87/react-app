@@ -1,0 +1,24 @@
+.main-content {
+  color: #000;
+  height: calc(100% - 100px);
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-content h3 {
+  font-size: 3rem;
+  width: 400px;
+}
+
+.description {
+  width: 350px;
+  padding-top: 20px;
+}
+
+.get-started {
+  padding-top: 20px;
+}
