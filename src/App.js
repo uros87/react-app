@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import Header from './components/Header';
-import HomeScreen from './components/HomeScreen';
+import Header from './components/Header/Header';
+import HomeScreen from './components/HomeScreen/HomeScreen';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './sass/base/_container.scss';
+import './sass/main.scss';
 
 const App = () => {
   return (

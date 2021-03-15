@@ -1,7 +1,7 @@
 .main-content {
   color: #000;
   height: calc(100% - 100px);
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-left: 100px;
   display: flex;
@@ -11,14 +11,31 @@
 
 .main-content h3 {
   font-size: 3rem;
-  width: 400px;
+  max-width: 400px;
 }
 
 .description {
-  width: 350px;
+  max-width: 350px;
   padding-top: 20px;
 }
 
 .get-started {
   padding-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    height: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    height: 100%;
+  }
+
+  .main-content h3 {
+    font-size: 1rem;
+    max-width: 400px;
+  }
 }

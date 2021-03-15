@@ -1,3 +1,7 @@
 @import 'base/reset';
-@import 'layout/header';
-@import 'layout/home';
+@import 'base/variables';
+@import '../sass/base/container';
+@import './components/buttons';
+
+@import '../components/Header/header';
+@import '../components//HomeScreen/home';

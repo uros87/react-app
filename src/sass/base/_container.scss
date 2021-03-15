@@ -4,3 +4,9 @@
   background: url('https://source.unsplash.com/random') no-repeat center
     center/cover;
 }
+
+@media (max-width: 992px) {
+  .main-container {
+    background-size: 100% 100%;
+  }
+}

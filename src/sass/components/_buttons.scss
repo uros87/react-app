@@ -1,7 +1,7 @@
 .l-button,
 .m-button {
-  background-color: blue;
-  color: #fff;
+  background-color: $button-background-color;
+  color: $button-text-color;
   border-radius: 20px;
   padding: 10px 20px;
 }

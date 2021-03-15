@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
-import '../sass/main.scss';
-import '../sass/components/_buttons.scss';
+import '../../sass/main.scss';
 import { NavLink } from 'react-router-dom';
 
 const HomeScreen = () => {
