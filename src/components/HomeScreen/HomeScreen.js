@@ -5,58 +5,28 @@ import axios from 'axios';
 
 const HomeScreen = () => {
   const getPdf = () => {
-    // odavde radi raptor
+    var bodyFormData = new FormData();
+    bodyFormData.append('user_credentials', 'YOUR_API_KEY_HERE123');
+    bodyFormData.append('doc[test]', true);
+    bodyFormData.append('doc[type]', 'pdf');
+    bodyFormData.append('doc[document_content]', '<div></div>');
 
-    const raptor = {
-      createAndDownloadDoc: function (api_key, doc_attrs) {
-        var makeFormElement = function (name, value) {
-          var element = document.createElement('textarea');
-          element.name = name;
-          element.value = value;
-          return element;
-        };
-        var form = document.createElement('form');
-        form.action = 'https://docraptor.com/docs';
-        form.method = 'post';
-        form.style.display = 'none';
-        form.appendChild(makeFormElement('user_credentials', api_key));
-        for (var key in doc_attrs) {
-          if (key == 'prince_options') {
-            for (var option in doc_attrs.prince_options) {
-              form.appendChild(
-                makeFormElement(
-                  'doc[prince_options][' + option + ']',
-                  doc_attrs.prince_options[option]
-                )
-              );
-            }
-          } else {
-            form.appendChild(
-              makeFormElement('doc[' + key + ']', doc_attrs[key])
-            );
-          }
-        }
-        document.body.appendChild(form);
-
-        form.submit();
-      },
-    };
-
-    raptor.createAndDownloadDoc('YOUR_API_KEY_HERE', {
-      // test: true, // test documents are free, but watermarked
-      type: 'pdf',
-      document_content: document.querySelector('.main-content').innerHTML, // use this page's HTML
-      // document_content: '<div><h1>Hello world!</h1><h3>Helllooo!!!</h3></div>', // or supply HTML directly
-      // document_url: 'http://example.com/your-page', // or use a URL
-      // javascript: true, // enable JavaScript processing
-      // prince_options: {
-      //   media: "screen",                                       // use screen styles instead of print styles
-      // }
-      async: true,
-      // ignore_resource_errors: false,
-      // ignore_console_messages: false,
-    });
+    axios({
+      method: 'post',
+      url: 'https://docraptor.com/docs/',
+      data: bodyFormData,
+      headers: { 'Content-Type': 'multipart/form-data' },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
   };
+
   return (
     <div className="main-content">
       <div>
