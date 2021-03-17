@@ -35,6 +35,13 @@
     flex-direction: column;
     height: 100vh;
     padding: 60px 0;
+    position: absolute;
+    width: 100%;
+    background: rgba(3, 6, 3, 0.9);
+  }
+
+  .container.active .nav-link {
+    color: #fff;
   }
 
   .site-pages {
@@ -44,7 +51,7 @@
   .hamburger {
     display: block;
     position: fixed;
-    left: 20px;
+    right: 20px;
     top: 20px;
   }
 }
